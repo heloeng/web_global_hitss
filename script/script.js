@@ -37,9 +37,7 @@ function calculaIdade(dataNascimento) {
 	} else if (mesAtual > mesNascimento) {
 		return anoAtual - anoNascimento;
 	} else {
-		idadeFinal = anoAtual - anoNascimento - 1;
-		console.log(typeof idadeFinal);
-		return idadeFinal;
+		return anoAtual - anoNascimento - 1;
 	}
 }
 
