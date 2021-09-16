@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
+    </script>
+
+
+    <script src="script/buscaCep.js"></script>
+    <script src="script/script.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <title>Cadastro</title>
 </head>
+
 <body>
+
     <form>
         Nome:
         <input type="text" id="txtNome"/>
@@ -51,7 +74,110 @@
         <button id="btnAdicionar" onclick="adicionar()">Adicionar item</button>
     </a>
 
-    <script src="script/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <header class="header">
+        <img src="image/">
+
+    </header>
+
+    <main class="main">
+        <div class="container">
+
+            <form>
+                <label> Nome:</label>
+                <input class="form-control" type="text" id="nome" />
+                
+                
+                <label> RG:</label>
+                <input class="form-control" type="text" id="rg" />
+                
+                <label> CPF:</label>
+                <input class="form-control" type="text" placeholder="000.000.000-00" id="txtCPF" type="text"
+                    name="txtCPF" maxlength="14" />
+
+
+                <label> Nascimento:</label>
+                <input type="date" id="txtNascimento" /><br>
+
+
+                <label> Telefone:</label>
+                <input class="form-control" type="tel" id="telefone" /><br>
+
+
+                <label>Cep - digite o cep e aperte a telca Tab do teclado</label>
+                <input class="form-control" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                    onblur="pesquisacep(this.value);" /><br>
+
+
+                <label>Rua:</label>
+                <input class="form-control" name="rua" type="text" id="rua" size="60" disabled />
+
+                <label>N°:</label>
+                <input type="text" id="numero" /><br>
+
+                <label>Bairro:</label>
+                <input class="form-control" name="bairro" type="text" id="bairro" size="40" disabled />
+                <label>Cidade:</label>
+                <input class="form-control" name="cidade" type="text" id="cidade" size="40" disabled />
+
+                <!-- <label>Estado:
+            <input name="uf" type="text" id="uf" size="2" /></label><br /> -->
+                <!-- <label>IBGE:
+            <input name="ibge" type="text" id="ibge" size="8" /></label><br /> -->
+
+
+                <label>Estado:</label>
+                <select id="estado">
+                    <option value="">Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espirito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                    <input type="reset">
+            </form>
+
+            <a href="pages/perfil.html">
+                <button id="btnAdicionar" onclick="adicionar()" class="btn btn-primary">Adicionar item</button>
+            </a>
+
+
+            <!-- <script src="script/script.js"></script> -->
+            <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script> -->
+       
+            </container>
+           
+    </main>
+
+    <footer class="footer">
+        <p>xxxxxxxxxxxxxxx</p>
+    </footer>
+
+
 </body>
+
 </html>
