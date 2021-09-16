@@ -30,55 +30,7 @@
 </head>
 
 <body>
-
-    <form>
-        Nome:
-        <input type="text" id="txtNome"/>
-        Email:
-        <input type="text" id="txtEmail"/>
-        Nascimento:
-        <input type="date" id="txtNascimento"/>
-        Estado:
-        <select type="text" id="txtEstado" >
-            <option value="">Selecione</option>
-            <option value="AC">Acre</option>
-            <option value="AL">Alagoas</option>
-            <option value="AP">Amapá</option>
-            <option value="AM">Amazonas</option>
-            <option value="BA">Bahia</option>
-            <option value="CE">Ceará</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="ES">Espirito Santo</option>
-            <option value="GO">Goiás</option>
-            <option value="MA">Maranhão</option>
-            <option value="MS">Mato Grosso do Sul</option>
-            <option value="MT">Mato Grosso</option>
-            <option value="MG">Minas Gerais</option>
-            <option value="PA">Pará</option>
-            <option value="PB">Paraíba</option>
-            <option value="PR">Paraná</option>
-            <option value="PE">Pernambuco</option>
-            <option value="PI">Piauí</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="RN">Rio Grande do Norte</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="RO">Rondônia</option>
-            <option value="RR">Roraima</option>
-            <option value="SC">Santa Catarina</option>
-            <option value="SP">São Paulo</option>
-            <option value="SE">Sergipe</option>
-            <option value="TO">Tocantins</option>
-        <input type="reset">
-    </form>
-    <a href="pages/perfil.html">
-        <button id="btnAdicionar" onclick="adicionar()">Adicionar item</button>
-    </a>
-
-
-    <header class="header">
-        <img src="image/">
-
-    </header>
+ 
 
     <main class="main">
         <div class="container">
@@ -97,14 +49,14 @@
 
 
                 <label> Nascimento:</label>
-                <input type="date" id="nascimento" /><br>
+                <input class="form-control" type="date" id="nascimento" /><br>
 
 
                 <label> Telefone:</label>
                 <input class="form-control" type="tel" id="telefone" /><br>
 
 
-                <label>Cep - digite o cep e aperte a telca Tab do teclado</label>
+                <label>Cep - digite o cep e aperte a tecla Tab do teclado</label>
                 <input class="form-control" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
                     onblur="pesquisacep(this.value);" /><br>
 
