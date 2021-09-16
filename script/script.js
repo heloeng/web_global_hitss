@@ -16,6 +16,7 @@ function imprimir() {
 	let dataNascimento = localStorage.getItem('NASCIMENTO').split('-').reverse().join('/');
 	let idade = calculaIdade(dataNascimento);
 
+
 	document.body.querySelector('#Nome').innerHTML = localStorage.getItem('NOME');
     document.body.querySelector('#Rg').innerHTML = localStorage.getItem('RG');
 	document.body.querySelector('#cpf').innerHTML = localStorage.getItem('CPF');
@@ -30,6 +31,7 @@ function imprimir() {
 	document.body.querySelector('#Bairro').innerHTML = localStorage.getItem('BAIRRO');
 	document.body.querySelector('#Cidade').innerHTML = localStorage.getItem('CIDADE');
 	document.body.querySelector('#Estado').innerHTML = localStorage.getItem('ESTADO');
+
 }
 
 function calculaIdade(dataNascimento) {
@@ -57,6 +59,3 @@ function calculaIdade(dataNascimento) {
 	}
 }
 
-if (typeof Storage !== 'undefined') {
-} else {
-}
