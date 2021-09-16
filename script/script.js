@@ -12,7 +12,7 @@ function imprimir() {
 	document.body.querySelector('#nome').innerHTML = localStorage.getItem('Nome');
 	document.body.querySelector('#email').innerHTML = localStorage.getItem('Email');
 	document.body.querySelector('#nascimento').innerHTML = dataNascimento;
-	document.body.querySelector('#idade').innerHTML = idade;
+	document.body.querySelector('#idade').innerHTML = idade +('\n anos') ;
 	document.body.querySelector('#estado').innerHTML = localStorage.getItem('Estado');
 }
 
