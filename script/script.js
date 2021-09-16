@@ -18,6 +18,7 @@ function imprimir() {
 
 	document.body.querySelector('#nome').innerHTML = localStorage.getItem('Nome');
     document.body.querySelector('#rg').innerHTML = localStorage.getItem('RG');
+
 	document.body.querySelector('#cpf').innerHTML = localStorage.getItem('CPF');
 	document.body.querySelector('#telefone').innerHTML = localStorage.getItem('Telefone');
 	
@@ -33,7 +34,10 @@ function imprimir() {
 	document.body.querySelector('#Numero').innerHTML = localStorage.getItem('NUMERO');
 	document.body.querySelector('#Bairro').innerHTML = localStorage.getItem('BAIRRO');
 	document.body.querySelector('#Cidade').innerHTML = localStorage.getItem('CIDADE');
+
 	document.body.querySelector('#estado').innerHTML = localStorage.getItem('Estado');
+
+
 }
 
 function calculaIdade(dataNascimento) {
@@ -61,6 +65,3 @@ function calculaIdade(dataNascimento) {
 	}
 }
 
-if (typeof Storage !== 'undefined') {
-} else {
-}
