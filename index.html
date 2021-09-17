@@ -7,6 +7,7 @@
         <link rel=stylesheet type="text/css" href="style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <script src="script/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
         </script>
@@ -19,7 +20,10 @@
         <script src="js/validaCPF.js"></script>
         <script src="script/buscaCep.js"></script>
         <script src="script/script.js"></script>
+        <script src="script/jquery.mask.min.js"></script>
         <link rel="stylesheet" href="css/estilo.css">
+   
+        
         <title>Cadastro</title>
     </head>
     <body>
@@ -29,19 +33,19 @@
         <main class="main">
             <div class="container">
                 <h1>CADASTRO</h1>
-                <form >
+                <form>
                     <div class="card">
                         <h2 class="title text-center mt-4">
                             Página de Cadastro
                         </h2>
                         <div class="form-input">
                             <label> Nome:</label>
-                            <input class="form-control" type="text" id="nome" required/>
+                            <input class="form-control" type="text" id="nome" required>
                         </div>
                         <div class="row">
                             <div class="col-8 form-input">    
                                 <label> CPF:</label>
-                                <input class="form-control" type="text" placeholder="000.000.000-00" id="cpf" type="text"
+                                <input class="form-control" type="text" onkeypress="$(this).mask('000.000.000-00')" id="cpf" type="text"
                                 name="txtCPF" maxlength="14" onblur="chamaValidaCPF(this.value)"/>
                             </div>
                             <div class="col-4 form-input">
@@ -52,7 +56,7 @@
                         <div class= "row">
                             <div class="col-9 form-input ">
                                 <label> Telefone:</label>
-                                <input class="form-control" type="tel" id="telefone" required /><br>
+                                <input class="form-control" type="tel" id="telefone" onkeypress="$(this).mask('(00) 00000-0000')" required /><br>
                             </div>
                             <div class="col-3 form-input">
                                 <label> Nascimento:</label>
@@ -61,7 +65,7 @@
                         </div>
                         <div class="form-input">
                             <label>Cep - digite o cep e aperte a tecla Tab do teclado</label>
-                            <input class="form-control" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                            <input class="form-control" name="cep" type="text" id="cep" value="" size="10" onkeypress="$(this).mask('00000-000')"
                             onblur="pesquisacep(this.value);" /><br>
                         </div>
                         <div class="row form-input">    
@@ -118,11 +122,9 @@
                                 <input type="reset" class="col-4 btn btn-primary">
                             </select>
                         </div>
-                    </div>
+                    </div>         
+                    <button formaction="pages/perfil.html" type="submit" id="btnAdicionar" onclick="adicionar()" class="btn btn-primary">Adicionar item</button>    
                     </form>
-                <a href="pages/perfil.html">
-                    <button type="submit" id="btnAdicionar" onclick="adicionar()" class="btn btn-primary">Adicionar item</button>
-                </a>
             </div>
         </main>
         <footer class="footer">
