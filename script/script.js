@@ -68,11 +68,17 @@ function calculaIdade(dataNascimento) {
 //Validação de CPF
 
 let chamaValidaCPF = (param) => {
+	exp = /\.|-/g;
+    param = param.toString().replace(exp, "");
 	let check = validaCPF(param);
 	let elemento = document.getElementById("cpf");
  
 	if (check == false) {
 	   elemento.classList.add("border-danger");
+	   elemento.classList.remove("is-invalid");
+	  
+	//    elemento.addClass("form-control is-invalid");
+	   
  
 	} else if (check == null) {
 	   elemento.classList.remove("border-danger");

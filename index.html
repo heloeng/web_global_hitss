@@ -20,7 +20,23 @@
         <script src="js/validaCPF.js"></script>
         <script src="script/buscaCep.js"></script>
         <script src="script/script.js"></script>
-        <script src="script/jquery.mask.min.js"></script>
+        <script src="script/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
+        <script src="script/jquery.validate.js"></script>
+        <script src="script/additional-methods.js"></script>
+        <script src="script/localization/messages_pt_BR.js"></script>
+        
+        <!-- <script>
+            $(document).ready(function(){
+            $("#formCadastro").validate({
+                rule:{
+                    cpf:{
+                        required:true,
+                        cpfBR:true
+                    }
+                }
+            })
+        })
+        </script> -->
         <link rel="stylesheet" href="css/estilo.css">
    
         
@@ -33,64 +49,75 @@
         <main class="main">
             <div class="container">
                 <h1>CADASTRO</h1>
-                <form>
+                <form id="formCadastro" class="needs-validation" novalidate>
                     <div class="card">
                         <h2 class="title text-center mt-4">
                             Página de Cadastro
                         </h2>
+                        <hr>
+                        
                         <div class="form-input">
-                            <label> Nome:</label>
-                            <input class="form-control" type="text" id="nome" required>
+                            <label for="nome">Nome:</label>
+                            <input class="form-control" type="text" id="nome" required/>
+                            <div class="valid-feedback">
+                                Tudo certo!
+                            </div>
+                  
                         </div>
-                        <div class="row">
+                        <div class="row cpf">
                             <div class="col-8 form-input">    
-                                <label> CPF:</label>
-                                <input class="form-control" type="text" onkeypress="$(this).mask('000.000.000-00')" id="cpf" type="text"
-                                name="txtCPF" maxlength="14" onblur="chamaValidaCPF(this.value)"/>
+                                <label for="cpf">CPF:</label>
+                                <input class="form-control" id="cpf" type="text"
+                                name="txtCPF" maxlength="14" onblur="chamaValidaCPF(this.value)" onkeypress="$(this).mask('000.000.000-00')" required/>
+                                
                             </div>
                             <div class="col-4 form-input">
-                                <label> RG:</label>
-                                <input class="form-control" type="text" id="rg" />
+                                <label for="rg">RG:</label>
+                                <input class="form-control" type="text" id="rg" required/>
                             </div>
                         </div>
                         <div class= "row">
                             <div class="col-9 form-input ">
-                                <label> Telefone:</label>
-                                <input class="form-control" type="tel" id="telefone" onkeypress="$(this).mask('(00) 00000-0000')" required /><br>
+                                <label for="telefone">Telefone:</label>
+                                <input class="form-control" type="tel" id="telefone" onkeypress="$(this).mask('(00) 00000-0000')" required/><br>
                             </div>
                             <div class="col-3 form-input">
-                                <label> Nascimento:</label>
-                                <input type="date" id="nascimento" required /><br>
+                                <label for="nascimento">Nascimento:</label>
+                                <input type="date" id="nascimento" required/><br>
                             </div>
                         </div>
                         <div class="form-input">
-                            <label>Cep - digite o cep e aperte a tecla Tab do teclado</label>
+                            <label for="cep">Cep - Digite o cep e aperte a tecla Tab do teclado</label>
                             <input class="form-control" name="cep" type="text" id="cep" value="" size="10" onkeypress="$(this).mask('00000-000')"
-                            onblur="pesquisacep(this.value);" /><br>
+                            onblur="pesquisacep(this.value);" required /><br>
                         </div>
                         <div class="row form-input">    
                             <div class="col-9">
-                                <label>Rua:</label>
+                                <label for="rua">Rua:</label>
                                 <input class="form-control" name="rua" type="text" id="rua" size="60" disabled />
                             </div>
                             <div class="col-3 form-input"> 
-                                <label>N°:</label>
+                                <label for="numero">N°:</label>
                                 <input class="form-control" type="text" id="numero" /><br>
                             </div>
                         </div>
                         <div class="row"> 
                             <div class="col-8 form-input">
-                                <label>Bairro:</label>
+                                <label for="bairro">Bairro:</label>
                                 <input class="form-control" name="bairro" type="text" id="bairro" size="40" disabled />
                             </div>
                             <div class="col-4 form-input">
-                                <label>Cidade:</label>
+                                <label for="cidade">Cidade:</label>
                                 <input class="form-control" name="cidade" type="text" id="cidade" size="40" disabled />
                             </div>
                         </div>
-                        <div>
-                            <label>Estado:</label>
-                            <select id="estado" class="col-7 form-input">
+                        <div class="form-input col-2">
+                            <label for="uf">Estado:</label>
+                            <input  name="uf" type="text" id="uf" size="2" disabled />
+                        </div>
+                        <div class="form-input">
+                            <label for="estado">Confirme o seu Estado:</label><br>
+                            <select id="estado" class="col-7" required>
                                 <option value="">Selecione</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
@@ -119,16 +146,49 @@
                                 <option value="SP">São Paulo</option>
                                 <option value="SE">Sergipe</option>
                                 <option value="TO">Tocantins</option>
-                                <input type="reset" class="col-4 btn btn-primary">
                             </select>
                         </div>
                     </div>         
-                    <button formaction="pages/perfil.html" type="submit" id="btnAdicionar" onclick="adicionar()" class="btn btn-primary">Adicionar item</button>    
-                    </form>
-            </div>
+                    <button formaction="pages/perfil.html" type="submit" id="btnAdicionar" onclick="adicionar()" class="btn1 btn-primary">Confirmar</button>    
+                    <button type="reset" class="btn1 btn-primary">Cancelar</button>
+                </form>
+            </div> 
         </main>
         <footer class="footer">
             <p>xxxxxxxxxxxxxxx</p>
         </footer>
+        <script>
+            // Exemplo de JavaScript inicial para desativar envios de formulário, se houver campos inválidos.
+            (function valida() {
+              'use strict';
+              window.addEventListener('load', function() {
+                // Pega todos os formulários que nós queremos aplicar estilos de validação Bootstrap personalizados.
+                var forms = document.getElementsByClassName('needs-validation');
+                // Faz um loop neles e evita o envio
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                  form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                      event.preventDefault(); //cancela o valor padrão 
+                      event.stopPropagation(); //Resumo. Impede a propagação do evento por seus respectivos listeners.
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                });
+              }, false);
+              $(document).ready(function(){
+                $("#formCadastro").validate({
+                    rule:{
+                        nomes:{
+                            required: true
+                        },
+                        cpf:{
+                            required:true,
+                            cpfBR:true
+                        }
+                    }
+                })
+            })
+            })();
+            </script>
     </body>
 </html>
