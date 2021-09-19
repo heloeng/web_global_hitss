@@ -36,8 +36,8 @@
                 }
             })
         })
-        </script> -->
-        <link rel="stylesheet" href="css/estilo.css">
+        </script>
+        <link rel="stylesheet" href="css/estilo.css"> -->
    
         
         <title>Cadastro</title>
@@ -49,7 +49,7 @@
         <main class="main">
             <div class="container">
                 <h1>CADASTRO</h1>
-                <form id="formCadastro" class="needs-validation" novalidate>
+                <form id="formCadastro" class="needs-validation" >
                     <div class="card">
                         <h2 class="title text-center mt-4">
                             Página de Cadastro
@@ -79,7 +79,7 @@
                         <div class= "row">
                             <div class="col-9 form-input ">
                                 <label for="telefone">Telefone:</label>
-                                <input class="form-control" type="tel" id="telefone" onkeypress="$(this).mask('(00) 00000-0000')" required/><br>
+                                <input class="form-control" type="tel" id="telefone"onblur="chamaValidaTel(this.value)" onkeypress="$(this).mask('(00) 00000-0000')" required/><br>
                             </div>
                             <div class="col-3 form-input">
                                 <label for="nascimento">Nascimento:</label>
@@ -175,7 +175,9 @@
                   }, false);
                 });
               }, false);
-              $(document).ready(function(){
+              
+            })();
+            $(document).ready(function(){
                 $("#formCadastro").validate({
                     rule:{
                         nomes:{
@@ -188,7 +190,6 @@
                     }
                 })
             })
-            })();
-            </script>
+        </script>
     </body>
 </html>
