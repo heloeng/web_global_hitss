@@ -15,8 +15,9 @@
     border-radius: 20px;
     box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.548);
 }
-.btn[type="submit"] {
+.btn1{
     margin: 35px;
+    margin-left: 60px;
     padding: 10px;
     cursor: pointer;
     border-radius: 50px;
@@ -25,5 +26,7 @@
     font-weight: bold;
     letter-spacing: .1rem;
     transition: 1.5s;
-    
+}
+.error{
+    color:red;
 }

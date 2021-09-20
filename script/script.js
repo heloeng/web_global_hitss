@@ -68,19 +68,22 @@ function calculaIdade(dataNascimento) {
 //Validação de CPF
 
 let chamaValidaCPF = (param) => {
+	exp = /\.|-/g;
+    param = param.toString().replace(exp, "");
 	let check = validaCPF(param);
 	let elemento = document.getElementById("cpf");
  
 	if (check == false) {
-	   elemento.classList.add("border-danger");
+	   	elemento.classList.add("border-danger");
+	   
  
 	} else if (check == null) {
-	   elemento.classList.remove("border-danger");
-	   elemento.classList.remove("border-success");
+	   	elemento.classList.remove("border-danger");
+	   	elemento.classList.remove("border-success");
  
 	} else {
-	   elemento.classList.remove("border-danger");
-	   elemento.classList.add("border-success");
+	   	elemento.classList.remove("border-danger");
+	   	elemento.classList.add("border-success");
 	}
  }
  
@@ -109,3 +112,36 @@ let chamaValidaCPF = (param) => {
 	return true;
  }
 
+//Validação de telefone
+let chamaValidaTel = (tel) => {
+	var tel = tel.replace(/\D/g, "");
+	
+	let tel1= tel.length
+	let check1 = validaTel(tel1);
+	let elemento1 = document.getElementById("telefone");
+ 
+
+	if (check1 == false) {
+	   	elemento1.classList.add("border-danger");
+	   
+	} else if (check1 == null) {
+	   	elemento1.classList.remove("border-danger");
+	   	elemento1.classList.remove("border-success");
+ 
+	} else {
+	   	elemento1.classList.remove("border-danger");
+	   	elemento1.classList.add("border-success");
+	}
+ }
+
+ let validaTel = (tel1) => {
+
+	if (tel1 == "") return null;
+	if (tel1 == "00000000000") return false;
+ 
+	if (tel1 == 11){
+	return true;
+	}else {
+	return false;
+	}
+ }
