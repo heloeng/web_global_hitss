@@ -38,11 +38,13 @@ select.selectCustom{
 select.selectCustom option{
   color: black;
  
-  /* background-color: #30cfd0; */
+ 
 }
-.btn[type="submit"] {
-    /* margin:35px; */
-    /* padding: 10px; */
+
+.btn1{
+    margin: 35px;
+    margin-left: 60px;
+    padding: 10px;
     cursor: pointer;
     border-radius:5px;
     /* background: #0380f5; */
@@ -50,7 +52,9 @@ select.selectCustom option{
     font-weight: bold;
     /* letter-spacing: .1rem; */
     transition: 1.5s;
-    
+}
+.error{
+    color:red;
 }
 
 footer {
