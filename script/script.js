@@ -1,4 +1,5 @@
 function adicionar() {
+
 	localStorage.setItem('Nome', nome.value);
 	localStorage.setItem('RG', rg.value);
 	localStorage.setItem('CPF', cpf.value);
@@ -18,10 +19,8 @@ function imprimir() {
 
 	document.body.querySelector('#nome').innerHTML = localStorage.getItem('Nome');
     document.body.querySelector('#rg').innerHTML = localStorage.getItem('RG');
-
 	document.body.querySelector('#cpf').innerHTML = localStorage.getItem('CPF');
 	document.body.querySelector('#telefone').innerHTML = localStorage.getItem('Telefone');
-	
     document.body.querySelector('#nascimento').innerHTML = dataNascimento;
 	document.body.querySelector('#idade').innerHTML = idade;
 	
@@ -34,7 +33,6 @@ function imprimir() {
 	document.body.querySelector('#Numero').innerHTML = localStorage.getItem('NUMERO');
 	document.body.querySelector('#Bairro').innerHTML = localStorage.getItem('BAIRRO');
 	document.body.querySelector('#Cidade').innerHTML = localStorage.getItem('CIDADE');
-
 	document.body.querySelector('#estado').innerHTML = localStorage.getItem('Estado');
 
 
@@ -72,18 +70,21 @@ let chamaValidaCPF = (param) => {
     param = param.toString().replace(exp, "");
 	let check = validaCPF(param);
 	let elemento = document.getElementById("cpf");
- 
+	let button = document.querySelector(".btn1");
+	
 	if (check == false) {
 	   	elemento.classList.add("border-danger");
-	   
+		button.disabled = true;
  
 	} else if (check == null) {
 	   	elemento.classList.remove("border-danger");
 	   	elemento.classList.remove("border-success");
+		button.disabled = true;
  
 	} else {
 	   	elemento.classList.remove("border-danger");
 	   	elemento.classList.add("border-success");
+		button.disabled = false;
 	}
  }
  
@@ -119,18 +120,22 @@ let chamaValidaTel = (tel) => {
 	let tel1= tel.length
 	let check1 = validaTel(tel1);
 	let elemento1 = document.getElementById("telefone");
+	let button = document.querySelector(".btn1");
  
 
 	if (check1 == false) {
 	   	elemento1.classList.add("border-danger");
+		button.disabled = true;
 	   
 	} else if (check1 == null) {
 	   	elemento1.classList.remove("border-danger");
 	   	elemento1.classList.remove("border-success");
+		button.disabled = true;
  
 	} else {
 	   	elemento1.classList.remove("border-danger");
 	   	elemento1.classList.add("border-success");
+		button.disabled = false;
 	}
  }
 
@@ -139,7 +144,55 @@ let chamaValidaTel = (tel) => {
 	if (tel1 == "") return null;
 	if (tel1 == "00000000000") return false;
  
-	if (tel1 == 11){
+	if (tel1 == 11|| tel1 == 10){
+	return true;
+	}else {
+	return false;
+	}
+ }
+
+
+ function teste(valor){
+	pesquisaCEP(valor); 
+	chamaValidaCEP(valor);
+	 
+ }
+//Validação do CEP
+
+
+
+ let chamaValidaCEP = (cep) => {
+	var cep = cep.replace(/\D/g, "");
+	
+	let cep1= cep.length
+	console.log(cep1)	
+	let check2 = validaTel(cep1);
+	let elemento2 = document.getElementById("cep");
+	let button = document.querySelector(".btn1");
+ 
+
+	if (check2 == false) {
+	   	elemento2.classList.add("border-danger");
+		button.disabled = true;
+	   
+	} else if (check2 == null) {
+	   	elemento2.classList.remove("border-danger");
+	   	elemento2.classList.remove("border-success");
+		button.disabled = true;
+ 
+	} else {
+	   	elemento2.classList.remove("border-danger");
+	   	elemento2.classList.add("border-success");
+		button.disabled = false;
+	}
+ }
+
+ let validaCEP = (cep1) => {
+
+	if (cep1 == "") return null;
+	if (cep1 == "000000000") return false;
+ 
+	if (cep1 == 9){
 	return true;
 	}else {
 	return false;

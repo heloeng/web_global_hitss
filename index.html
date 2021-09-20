@@ -25,20 +25,6 @@
         <script src="script/additional-methods.js"></script>
         <script src="script/localization/messages_pt_BR.js"></script>
         
-        <!-- <script>
-            $(document).ready(function(){
-            $("#formCadastro").validate({
-                rule:{
-                    cpf:{
-                        required:true,
-                        cpfBR:true
-                    }
-                }
-            })
-        })
-        </script>
-        <link rel="stylesheet" href="css/estilo.css"> -->
-   
         
         <title>Cadastro</title>
     </head>
@@ -49,7 +35,7 @@
         <main class="main">
             <div class="container">
                 <h1>CADASTRO</h1>
-                <form id="formCadastro" class="needs-validation" >
+                <form id="formCadastro" class="needs-validation"  >
                     <div class="card">
                         <h2 class="title text-center mt-4">
                             Página de Cadastro
@@ -88,8 +74,8 @@
                         </div>
                         <div class="form-input">
                             <label for="cep">Cep - Digite o cep e aperte a tecla Tab do teclado</label>
-                            <input class="form-control" name="cep" type="text" id="cep" value="" size="10" onkeypress="$(this).mask('00000-000')"
-                            onblur="pesquisacep(this.value);" required /><br>
+                            <input class="cpf form-control" name="cep" type="text" id="cep" value="" size="10" onkeypress="$(this).mask('00000-000')"
+                            onblur="pesquisacep(this.value);chamaValidaCEP(this.value)" required /><br>
                         </div>
                         <div class="row form-input">    
                             <div class="col-9">
@@ -110,10 +96,6 @@
                                 <label for="cidade">Cidade:</label>
                                 <input class="form-control" name="cidade" type="text" id="cidade" size="40" disabled />
                             </div>
-                        </div>
-                        <div class="form-input col-2">
-                            <label for="uf">Estado:</label>
-                            <input  name="uf" type="text" id="uf" size="2" disabled />
                         </div>
                         <div class="form-input">
                             <label for="estado">Confirme o seu Estado:</label><br>
@@ -177,19 +159,19 @@
               }, false);
               
             })();
-            $(document).ready(function(){
-                $("#formCadastro").validate({
-                    rule:{
-                        nomes:{
-                            required: true
-                        },
-                        cpf:{
-                            required:true,
-                            cpfBR:true
-                        }
-                    }
-                })
-            })
+            // $(document).ready(function(){
+            //     $("#formCadastro").validate({
+            //         rule:{
+            //             nomes:{
+            //                 required: true
+            //             },
+            //             cpf:{
+            //                 required:true,
+            //                 cpfBR:true
+            //             }
+            //         }
+            //     })
+            // })
         </script>
     </body>
 </html>
