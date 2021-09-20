@@ -11,13 +11,13 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-            integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js">
+         // integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
             integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
         </script>
-        <script src="js/validaCPF.js"></script>
+        <!-- <script src="js/validaCPF.js"></script> -->
         <script src="script/buscaCep.js"></script>
         <script src="script/script.js"></script>
         <script src="script/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
@@ -25,20 +25,6 @@
         <script src="script/additional-methods.js"></script>
         <script src="script/localization/messages_pt_BR.js"></script>
         
-        <!-- <script>
-            $(document).ready(function(){
-            $("#formCadastro").validate({
-                rule:{
-                    cpf:{
-                        required:true,
-                        cpfBR:true
-                    }
-                }
-            })
-        })
-        </script>
-        <link rel="stylesheet" href="css/estilo.css"> -->
-   
         
         <title>Cadastro</title>
     </head>
@@ -49,7 +35,7 @@
         <main class="main">
             <div class="container">
                 <h1>CADASTRO</h1>
-                <form id="formCadastro" class="needs-validation" >
+                <form id="formCadastro" class="needs-validation" novalidate >
                     <div class="card">
                         <h2 class="title text-center mt-4">
                             Página de Cadastro
@@ -88,8 +74,8 @@
                         </div>
                         <div class="form-input">
                             <label for="cep">Cep - Digite o cep e aperte a tecla Tab do teclado</label>
-                            <input class="form-control" name="cep" type="text" id="cep" value="" size="10" onkeypress="$(this).mask('00000-000')"
-                            onblur="pesquisacep(this.value);" required /><br>
+                            <input class="cpf form-control" name="cep" type="text" id="cep" value="" size="10" onkeypress="$(this).mask('00000-000')"
+                            onblur="teste(this.value)" required /><br>
                         </div>
                         <div class="row form-input">    
                             <div class="col-9">
@@ -110,10 +96,6 @@
                                 <label for="cidade">Cidade:</label>
                                 <input class="form-control" name="cidade" type="text" id="cidade" size="40" disabled />
                             </div>
-                        </div>
-                        <div class="form-input col-2">
-                            <label for="uf">Estado:</label>
-                            <input  name="uf" type="text" id="uf" size="2" disabled />
                         </div>
                         <div class="form-input">
                             <label for="estado">Confirme o seu Estado:</label><br>
@@ -179,10 +161,7 @@
             })();
             $(document).ready(function(){
                 $("#formCadastro").validate({
-                    rule:{
-                        nomes:{
-                            required: true
-                        },
+                    rules:{
                         cpf:{
                             required:true,
                             cpfBR:true
