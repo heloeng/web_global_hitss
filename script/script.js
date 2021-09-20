@@ -21,16 +21,14 @@ function imprimir() {
 
 	document.body.querySelector ('#nome').innerHTML = ('\n Nome : ')+ localStorage.getItem('Nome');
     document.body.querySelector('#rg').innerHTML = ('\n RG : ')+ localStorage.getItem('RG');
-
 	document.body.querySelector('#cpf').innerHTML = ('\n CPF : ')+ localStorage.getItem('CPF');
 	document.body.querySelector('#telefone').innerHTML = ('\n Telefone : ')+ localStorage.getItem('Telefone');
-	
     document.body.querySelector('#nascimento').innerHTML = ('\n Nascimento : ')+ dataNascimento;
 	document.body.querySelector('#idade').innerHTML =('\n Idade: ')+ idade + ('\n Anos');
 
 	
 	
-	//as variáveis da linha 28 a 34  estão fora do padrão das outras variáveis, porque o código descrito no html foi retirado
+	//as variáveis da linha 35 a 40  estão fora do padrão das outras variáveis, porque o código descrito no html foi retirado
 	//do site via rápido e contém configurações que não permitem alterar a nomenclatura.
 	
 
@@ -39,10 +37,7 @@ function imprimir() {
 	document.body.querySelector('#Numero').innerHTML =('\n Numero : ')+ localStorage.getItem('NUMERO');
 	document.body.querySelector('#Bairro').innerHTML = ('\n Bairro : ')+ localStorage.getItem('BAIRRO');
 	document.body.querySelector('#Cidade').innerHTML = ('\n Cidade : ')+ localStorage.getItem('CIDADE');
-
 	document.body.querySelector('#estado').innerHTML = ('\n Estado : ')+ localStorage.getItem('Estado');
-
-
 
 }
 
@@ -79,13 +74,11 @@ let chamaValidaCPF = (param) => {
 	let check = validaCPF(param);
 	let elemento = document.getElementById("cpf");
 	let button = document.querySelector(".btn1");
-	let teste = document.querySelector(".cpf");
+	
 	
 	if (check == false) {
 	   	elemento.classList.add("border-danger");
 		button.disabled = true;
-		teste.classList.remove("background-image");
-		teste.classList.remove("valid_class: 'is-valid'");
 		
  
 	} else if (check == null) {
@@ -164,14 +157,13 @@ let chamaValidaTel = (tel) => {
  }
 
 
- function teste (valor){
+ function valid (valor){
 	pesquisacep(valor); 
 	chamaValidaCEP(valor);
-	// pesquisacep(this.value);chamaValidaCEP(this.value)
  }
+
+
 //Validação do CEP
-
-
 
  let chamaValidaCEP = (cep) => {
 	var cep = cep.replace(/\D/g, "");
