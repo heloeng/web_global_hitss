@@ -79,10 +79,14 @@ let chamaValidaCPF = (param) => {
 	let check = validaCPF(param);
 	let elemento = document.getElementById("cpf");
 	let button = document.querySelector(".btn1");
+	let teste = document.querySelector(".cpf");
 	
 	if (check == false) {
 	   	elemento.classList.add("border-danger");
 		button.disabled = true;
+		teste.classList.remove("background-image");
+		teste.classList.remove("valid_class: 'is-valid'");
+		
  
 	} else if (check == null) {
 	   	elemento.classList.remove("border-danger");
@@ -160,10 +164,10 @@ let chamaValidaTel = (tel) => {
  }
 
 
- function teste(valor){
-	pesquisaCEP(valor); 
+ function teste (valor){
+	pesquisacep(valor); 
 	chamaValidaCEP(valor);
-	 
+	// pesquisacep(this.value);chamaValidaCEP(this.value)
  }
 //Validação do CEP
 
@@ -174,7 +178,7 @@ let chamaValidaTel = (tel) => {
 	
 	let cep1= cep.length
 	console.log(cep1)	
-	let check2 = validaTel(cep1);
+	let check2 = validaCEP(cep1);
 	let elemento2 = document.getElementById("cep");
 	let button = document.querySelector(".btn1");
  
@@ -200,7 +204,7 @@ let chamaValidaTel = (tel) => {
 	if (cep1 == "") return null;
 	if (cep1 == "000000000") return false;
  
-	if (cep1 == 9){
+	if (cep1 == 8){
 	return true;
 	}else {
 	return false;
