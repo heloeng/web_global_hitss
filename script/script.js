@@ -1,5 +1,5 @@
 function adicionar() {
-
+	
 	localStorage.setItem('Nome', nome.value);
 	localStorage.setItem('RG', rg.value);
 	localStorage.setItem('CPF', cpf.value);
@@ -73,7 +73,7 @@ let chamaValidaCPF = (param) => {
     param = param.toString().replace(exp, "");
 	let check = validaCPF(param);
 	let elemento = document.getElementById("cpf");
-	let button = document.querySelector(".btn1");
+	let button = document.querySelector("#btnAdicionar");
 	
 	
 	if (check == false) {
@@ -91,10 +91,10 @@ let chamaValidaCPF = (param) => {
 	   	elemento.classList.add("border-success");
 		button.disabled = false;
 	}
- }
+}
  
  
- let validaCPF = (strCPF) => {
+let validaCPF = (strCPF) => {
 	let Soma;
 	let Resto;
 	Soma = 0;
@@ -115,8 +115,8 @@ let chamaValidaCPF = (param) => {
  
 	if ((Resto == 10) || (Resto == 11)) Resto = 0;
 	if (Resto != parseInt(strCPF.substring(10, 11))) return false;
-	return true;
- }
+	return true;	
+}
 
 //Validação de telefone
 let chamaValidaTel = (tel) => {
@@ -125,7 +125,7 @@ let chamaValidaTel = (tel) => {
 	let tel1= tel.length
 	let check1 = validaTel(tel1);
 	let elemento1 = document.getElementById("telefone");
-	let button = document.querySelector(".btn1");
+	let button = document.querySelector("#btnAdicionar");
  
 
 	if (check1 == false) {
@@ -142,9 +142,9 @@ let chamaValidaTel = (tel) => {
 	   	elemento1.classList.add("border-success");
 		button.disabled = false;
 	}
- }
+}
 
- let validaTel = (tel1) => {
+let validaTel = (tel1) => {
 
 	if (tel1 == "") return null;
 	if (tel1 == "00000000000") return false;
@@ -154,25 +154,25 @@ let chamaValidaTel = (tel) => {
 	}else {
 	return false;
 	}
- }
+}
 
 
- function valid (valor){
+function valid (valor){
 	pesquisacep(valor); 
 	chamaValidaCEP(valor);
- }
+}
 
 
 //Validação do CEP
 
- let chamaValidaCEP = (cep) => {
+let chamaValidaCEP = (cep) => {
 	var cep = cep.replace(/\D/g, "");
 	
 	let cep1= cep.length
 	console.log(cep1)	
 	let check2 = validaCEP(cep1);
 	let elemento2 = document.getElementById("cep");
-	let button = document.querySelector(".btn1");
+	let button = document.querySelector("#btnAdicionar");
  
 
 	if (check2 == false) {
@@ -189,9 +189,9 @@ let chamaValidaTel = (tel) => {
 	   	elemento2.classList.add("border-success");
 		button.disabled = false;
 	}
- }
+}
 
- let validaCEP = (cep1) => {
+let validaCEP = (cep1) => {
 
 	if (cep1 == "") return null;
 	if (cep1 == "000000000") return false;
@@ -201,4 +201,4 @@ let chamaValidaTel = (tel) => {
 	}else {
 	return false;
 	}
- }
+}

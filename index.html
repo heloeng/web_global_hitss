@@ -21,6 +21,8 @@
     <script src="script/buscaCep.js"></script>
     <script src="script/script.js"></script>
     <script src="script/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
+    <script src="script/jquery.validate.js"></script>
+    <script src="script/localization/messages_pt_BR.js"></script>
     <link rel="stylesheet" href="css/estilo.css">
 
 
@@ -30,12 +32,12 @@
 <body>
     <header>
         <div class="logo">
-            <img src="./pages/images/logonovo.png" alt=" logo">
+            <img src="./pages/images/logonovo.png" alt=" logo" >
         </div>
     </header>
     <main class="main">
         <div class="container">
-            <form id="formCadastro" class="needs-validation">
+            <form id="formCadastro" class="needs-validation" novalidate>
                 <div class="card">
                     <h2 class="title text-center mt-4">
                         Página de Cadastro
@@ -50,11 +52,11 @@
                         <div class="form-group col-md-7">
                             <label> CPF:</label>
                             <input class="form-control" type="text" onkeypress="$(this).mask('000.000.000-00')" id="cpf"
-                                type="text" name="txtCPF" maxlength="14" onblur="chamaValidaCPF(this.value)" />
+                                type="text" name="txtCPF" maxlength="14" onblur="chamaValidaCPF(this.value)" required />
                         </div>
                         <div class="form-group col-md-5">
                             <label> RG:</label>
-                            <input class="form-control" type="text" id="rg" />
+                            <input class="form-control" type="text" id="rg" required />
                         </div>
                     </div>
                     <div class="form-group row mt-4">
@@ -98,7 +100,7 @@
                     </div>
                     <div>
                         <div class="form-group">
-                            <select id="estado" class="form-control col-md-12 mt-5 selectCustom">
+                            <select id="estado" class="form-control col-md-12 mt-5 selectCustom" required>
                         </div>
                         <option value="">Selecione Estado</option>
                         <option value="AC">Acre</option>
@@ -164,10 +166,10 @@
         })();
         $(document).ready(function(){
             $("#formCadastro").validate({
-                rules:{
-                    cpf:{
-                        required:true,
-                        cpfBR:true
+                messages:{
+                    nome: {
+                        required: "Por favor, informe o seu nome.",
+                        minlength: "O nome deve ter pelo menos 3 caracteres"
                     }
                 }
             })
