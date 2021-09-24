@@ -10,21 +10,16 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="script/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js">
-         // integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
-        </script>
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">       </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
-        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
-        </script>
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     <script src="script/buscaCep.js"></script>
     <script src="script/script.js"></script>
     <script src="script/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
-    <script src="script/jquery.validate.js"></script>
-    <script src="script/localization/messages_pt_BR.js"></script>
     <link rel="stylesheet" href="css/estilo.css">
-
 
     <title>Cadastro</title>
 </head>
@@ -46,28 +41,44 @@
                         <div class="form-group col ">
                             <label> Nome:</label>
                             <input class="form-control" type="text" id="nome" required>
+                            <div class="invalid-feedback">
+                                O campo NOME é de preenchimento obrigatório!
+                            </div>
                         </div>
+
                     </div>
                     <div class="form-group row mt-4">
                         <div class="form-group col-md-7">
                             <label> CPF:</label>
-                            <input class="form-control" type="text" onkeypress="$(this).mask('000.000.000-00')" id="cpf"
+                            <input class="cpf form-control" type="text" onkeypress="$(this).mask('000.000.000-00')" id="cpf"
                                 type="text" name="txtCPF" maxlength="14" onblur="chamaValidaCPF(this.value)" required />
+                            <div class="invalid-feedback">
+                                O campo CPF é de preenchimento obrigatório!
+                            </div>
                         </div>
                         <div class="form-group col-md-5">
                             <label> RG:</label>
                             <input class="form-control" type="text" id="rg" required />
+                            <div class="invalid-feedback">
+                                O campo RG é de preenchimento obrigatório!
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
                         <div class=" form-group col-md-6 ">
                             <label for="nascimento"></label> Nascimento:</label>
                             <input class="form-control" type="date" id="nascimento" required />
+                            <div class="invalid-feedback">
+                                O campo NASCIMENTO é de preenchimento obrigatório!
+                            </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label> Telefone:</label>
                             <input class="form-control" type="tel" id="telefone"
                                 onkeypress="$(this).mask('(00) 00000-0000')" onblur="chamaValidaTel(this.value)" required />
+                            <div class="invalid-feedback">
+                                O campo TELEFONE é de preenchimento obrigatório!
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
@@ -75,16 +86,25 @@
                             <label>Cep:</label>
                             <input class="cpf form-control" name="cep" type="text" id="cep" value="" size="10"
                                 onkeypress="$(this).mask('00000-000')" onblur="valid(this.value)" required />
+                            <div class="invalid-feedback">
+                                O campo CEP é de preenchimento obrigatório!
+                            </div>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label>Rua:</label>
                             <input class="form-control" name="rua" type="text" id="rua" size="60" disabled />
+                            <div class="invalid-feedback">
+                                O campo RUA é de preenchimento obrigatório!
+                            </div>
                         </div>
 
                         <div class="form-group col-md-2">
                             <label>N°:</label>
-                            <input class="form-control" type="text" id="numero" />
+                            <input class="form-control" type="text" id="numero" required />
+                            <div class="invalid-feedback">
+                                O campo Nº é de preenchimento obrigatório!
+                            </div>
                         </div>
                     </div>
 
@@ -92,10 +112,16 @@
                         <div class="form-group col-md-6">
                             <label>Bairro:</label>
                             <input class="form-control" name="bairro" type="text" id="bairro" size="40" disabled />
+                            <div class="invalid-feedback">
+                                O campo BAIRRO é de preenchimento obrigatório!
+                            </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Cidade:</label>
                             <input class="form-control" name="cidade" type="text" id="cidade" size="40" disabled />
+                            <div class="invalid-feedback">
+                                O campo CIDADE é de preenchimento obrigatório!
+                            </div>
                         </div>
                     </div>
                     <div>
@@ -131,6 +157,9 @@
                         <option value="SE">Sergipe</option>
                         <option value="TO">Tocantins</option>
                         </select>
+                        <div class="invalid-feedback">
+                            O campo ESTADO é de preenchimento obrigatório!
+                        </div>
                         <input type="reset" class="btn-outline-danger btn-sm mt-4">
                     </div>
                 </div>
@@ -155,25 +184,23 @@
             var validation = Array.prototype.filter.call(forms, function(form) {
               form.addEventListener('submit', function(event) {
                 if (form.checkValidity() === false) {
-                  event.preventDefault(); //cancela o valor padrão 
-                  event.stopPropagation(); //Resumo. Impede a propagação do evento por seus respectivos listeners.
+                    event.preventDefault(); //cancela o valor padrão 
+                    event.stopPropagation(); //Resumo. Impede a propagação do evento por seus respectivos listeners.
+                    alert("Preencha os campos")
+                        // if (form == true){alert("dados enviado")} 
+                }
+                if (form.checkValidity() === true) {
+                    alert("Dados enviados")
                 }
                 form.classList.add('was-validated');
+                alerta("Alerta")
+                
               }, false);
             });
           }, false);
           
         })();
-        $(document).ready(function(){
-            $("#formCadastro").validate({
-                messages:{
-                    nome: {
-                        required: "Por favor, informe o seu nome.",
-                        minlength: "O nome deve ter pelo menos 3 caracteres"
-                    }
-                }
-            })
-        })
+       
     </script>
 </body>
 

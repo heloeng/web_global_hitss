@@ -78,18 +78,19 @@ let chamaValidaCPF = (param) => {
 	
 	if (check == false) {
 	   	elemento.classList.add("border-danger");
-		button.disabled = true;
+		   button.disabled=true;
 		
  
 	} else if (check == null) {
 	   	elemento.classList.remove("border-danger");
 	   	elemento.classList.remove("border-success");
-		button.disabled = true;
+		   button.disabled=true;
  
 	} else {
 	   	elemento.classList.remove("border-danger");
 	   	elemento.classList.add("border-success");
-		button.disabled = false;
+		   if (button.disabled==null || button.disabled == true) {button.disabled = false};
+
 	}
 }
  
@@ -130,17 +131,17 @@ let chamaValidaTel = (tel) => {
 
 	if (check1 == false) {
 	   	elemento1.classList.add("border-danger");
-		button.disabled = true;
+		   button.disabled=true;
 	   
 	} else if (check1 == null) {
 	   	elemento1.classList.remove("border-danger");
 	   	elemento1.classList.remove("border-success");
-		button.disabled = true;
+		   button.disabled=true;
  
 	} else {
 	   	elemento1.classList.remove("border-danger");
 	   	elemento1.classList.add("border-success");
-		button.disabled = false;
+			if (button.disabled == true || button.disabled == null) {button.disabled = false};
 	}
 }
 
@@ -177,17 +178,17 @@ let chamaValidaCEP = (cep) => {
 
 	if (check2 == false) {
 	   	elemento2.classList.add("border-danger");
-		button.disabled = true;
+		   button.disabled=true;
 	   
 	} else if (check2 == null) {
 	   	elemento2.classList.remove("border-danger");
 	   	elemento2.classList.remove("border-success");
-		button.disabled = true;
+		   button.disabled=true;
  
 	} else {
 	   	elemento2.classList.remove("border-danger");
 	   	elemento2.classList.add("border-success");
-		button.disabled = false;
+		   if (button.disabled == true || button.disabled == null) {button.disabled = false};
 	}
 }
 
