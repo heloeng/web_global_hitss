@@ -12,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
     <link rel="stylesheet" href="../css/perfil.css">
@@ -20,6 +21,7 @@
 
 </head>
 <!-- imprimindo a função do formulário -->
+
 <body onload="imprimir()">
 
     <header>
@@ -28,88 +30,88 @@
                 <img src="images/logonovo.png" alt=" logo">
             </div>
         </container>
-      
+
     </header>
 
 
-<main>
-    <fieldset class="bordacontainer">
+    <main>
+        <fieldset class="bordacontainer">
 
-        <div class="container">
-            <!-- seção dados vindo do cadastro -->
-            <section class="dados">
-                <!-- linha nome -->
-                <div class="row mb-2">
-                    <div class='col-md-12'>
-                        <p id="nome"></p>
+            <div class="container">
+                <!-- seção dados vindo do cadastro -->
+                <section class="dados">
+                    <!-- linha nome -->
+                    <div class="row mb-2">
+                        <div class='col-md-12'>
+                            <p id="nome"></p>
+                        </div>
                     </div>
-                </div>
-                <!-- linha rg / cpf -->
-                <div class="row mb-2">
-                    <div class='col-md-5'>
-                        <p id="rg"></p>
+                    <!-- linha rg / cpf -->
+                    <div class="row mb-2">
+                        <div class='col-md-5'>
+                            <p id="rg"></p>
+                        </div>
+                        <div class='col-md-7'>
+                            <p id="cpf"></p>
+                        </div>
                     </div>
-                    <div class='col-md-7'>
-                        <p id="cpf"></p>
+                    <!-- linha dada de nascimento idade -->
+                    <div class="row mb-2">
+                        <div class='col-sm'>
+                            <p id="nascimento"></p>
+                        </div>
+                        <div class='col-sm'>
+                            <p id="idade"></p>
+                        </div>
                     </div>
-                </div>
-                <!-- linha dada de nascimento idade -->
-                <div class="row mb-2">
-                    <div class='col-sm'>
-                        <p id="nascimento"></p>
+                    <!-- linha telefone e Cpf -->
+                    <div class="row mb-2">
+                        <div class='col-sm'>
+                            <p id="telefone"></p>
+                        </div>
+                        <div class='col-sm'>
+                            <p id="Cep"></p>
+                        </div>
                     </div>
-                    <div class='col-sm'>
-                        <p id="idade"></p>
-                    </div>
-                </div>
-                <!-- linha telefone e Cpf -->
-                <div class="row mb-2">
-                    <div class='col-sm'>
-                        <p id="telefone"></p>
-                    </div>
-                    <div class='col-sm'>
-                        <p id="Cep"></p>
-                    </div>
-                </div>
-                <!-- linha rua e numero-->
+                    <!-- linha rua e numero-->
 
-                <div class="row mb-2">
-                    <div class='col-md-8'>
-                        <p id="Rua"></p>
+                    <div class="row mb-2">
+                        <div class='col-md-8'>
+                            <p id="Rua"></p>
+                        </div>
+                        <div class='col-md-4'>
+                            <p id="Numero"></p>
+                        </div>
                     </div>
-                    <div class='col-md-4'>
-                        <p id="Numero"></p>
+
+                    <!-- linha bairro, cidade e estado-->
+                    <div class="row mb-2">
+                        <div class='col-md-4'>
+                            <p id="Bairro"></p>
+                        </div>
+                        <div class='col-md-4'>
+                            <p id="Cidade"></p>
+                        </div>
+                        <div class='col-md-4'>
+                            <p id="estado"></p>
+                        </div>
                     </div>
-                </div>
+                </section>
 
-                <!-- linha bairro, cidade e estado-->
-                <div class="row mb-2">
-                    <div class='col-md-4'>
-                        <p id="Bairro"></p>
-                    </div>
-                    <div class='col-md-4'>
-                        <p id="Cidade"></p>
-                    </div>
-                    <div class='col-md-4'>
-                        <p id="estado"></p>
-                    </div>
-                </div>
-            </section>
+            </div>
+            <!-- seção Botão de retornar -->
+            <div class="container text-center pt-5">
 
-        </div>
-        <!-- seção Botão de retornar -->
-        <div class="container text-center pt-5">
+                <a href="../index.html">
+                    <button type="button" class="btn btn-primary btn-lg mt-4  ">Concluir</button>
+                </a>
 
-            <a href="../index.html">
-                <button type="button" class="btn btn-primary btn-lg mt-4  ">Concluir</button>
-            </a>
+            </div>
 
-        </div>
+        </fieldset>
+    </main>
 
-    </fieldset>
-</main>
-
-<!-- inicio footer -->
+    <!-- inicio footer -->
     <footer>
         <section>
             <div class="idealizador">Idealizador: Valksandro Menezes</div>
@@ -126,8 +128,8 @@
             redesSociais__lista__item ">
                 <div class="p-2"> Bruno Bergamaschi </div>
                 <div class="p-2 "> Daniel Rodrigues</div>
-                <div class="p-2 "> Jerson Barros</div>
                 <div class="p-2 ">Heloisa Mendes</div>
+                <div class="p-2 "> Jerson Barros</div>
                 <div class="p-2 "> Vagner Bruno</div>
             </div>
 
@@ -147,13 +149,6 @@
                             src="images/linkedin.svg" alt="linkedin">
                     </a>
                 </div>
-                <div class="p-2 bd-highlight"> <a href="https://github.com/Dairone" target="_blank"><img
-                            src="images/github.svg" alt="github">
-                    </a>
-                    <a href="https://www.linkedin.com/in/jerson-barros-7585391aa/" target="_blank"><img src="images/linkedin.svg"
-                            alt="linkedin">
-                    </a>
-                </div>
                 <div class="p-2 bd-highlight"> <a href="https://github.com/heloeng" target="_blank"><img
                             src="images/github.svg" alt="github">
                     </a>
@@ -161,6 +156,14 @@
                             src="images/linkedin.svg" alt="linkedin">
                     </a>
                 </div>
+                <div class="p-2 bd-highlight"> <a href="https://github.com/Dairone" target="_blank"><img
+                            src="images/github.svg" alt="github">
+                    </a>
+                    <a href="https://www.linkedin.com/in/jerson-barros-7585391aa/" target="_blank"><img
+                            src="images/linkedin.svg" alt="linkedin">
+                    </a>
+                </div>
+
                 <div class="p-2 bd-highlight"> <a href="https://github.com/vagnerbruno85" target="_blank"><img
                             src="images/github.svg" alt="github">
                     </a>
